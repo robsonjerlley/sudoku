@@ -7,8 +7,7 @@ import br.com.dio.service.EventListener;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import java.awt.Dimension;
-import java.awt.Font;
+import java.awt.*;
 
 import static br.com.dio.service.EventEnum.CLEAR_SPACE;
 import static java.awt.Font.PLAIN;
@@ -24,6 +23,7 @@ public class NumberText extends JTextField implements EventListener {
         this.setPreferredSize(dimension);
         this.setVisible(true);
         this.setFont(new Font("Arial", PLAIN, 20));
+        this.setForeground(Color.blue);
         this.setHorizontalAlignment(CENTER);
         this.setDocument(new NumberTextLimit());
         this.setEnabled(!space.isFixed());

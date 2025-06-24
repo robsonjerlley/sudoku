@@ -4,10 +4,10 @@ import br.com.dio.ui.custom.input.NumberText;
 
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
-import java.awt.Dimension;
+import java.awt.*;
 import java.util.List;
 
-import static java.awt.Color.black;
+import static java.awt.Color.*;
 
 public class SudokuSector extends JPanel {
 
@@ -16,6 +16,7 @@ public class SudokuSector extends JPanel {
         this.setSize(dimension);
         this.setPreferredSize(dimension);
         this.setBorder(new LineBorder(black, 2, true));
+        this.setBackground(gray);
         this.setVisible(true);
         textFields.forEach(this::add);
     }

@@ -12,10 +12,7 @@ import br.com.dio.ui.custom.input.NumberText;
 import br.com.dio.ui.custom.panel.MainPanel;
 import br.com.dio.ui.custom.panel.SudokuSector;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,12 +80,12 @@ public class MainScreen {
     private void addFinishGameButton(final JPanel mainPanel) {
         finishGameButton = new FinishGameButton(e -> {
             if (boardService.gameIsFinished()){
-                showMessageDialog(null, "Parabéns você concluiu o jogo");
+                showMessageDialog(null, "Parabéns você concluiu o jogo!");
                 resetButton.setEnabled(false);
                 checkGameStatusButton.setEnabled(false);
                 finishGameButton.setEnabled(false);
             } else {
-                var message = "Seu jogo tem alguma inconsistência, ajuste e tente novamente";
+                var message = "Seu jogo possui inconsistência(s), reveja e tente novamente";
                 showMessageDialog(null, message);
             }
         });
@@ -100,11 +97,11 @@ public class MainScreen {
             var hasErrors = boardService.hasErrors();
             var gameStatus = boardService.getStatus();
             var message = switch (gameStatus){
-                case NON_STARTED -> "O jogo não foi iniciado";
-                case INCOMPLETE -> "O jogo está imcompleto";
-                case COMPLETE -> "O jogo está completo";
+                case NON_STARTED -> "O jogo não foi iniciado.";
+                case INCOMPLETE -> "O jogo está imcompleto.";
+                case COMPLETE -> "O jogo está completo!";
             };
-            message += hasErrors ? " e contém erros" : " e não contém erros";
+            message += hasErrors ? " e contém erros, " : " e não contém erros.";
             showMessageDialog(null, message);
         });
         mainPanel.add(MainScreen.this.checkGameStatusButton);
